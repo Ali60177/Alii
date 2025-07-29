@@ -1,0 +1,159 @@
+:root{
+  --main-color:#ff2c1f;
+  --text-color:#020307;
+  --bg-color:#fff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Verdana,Geneva,Tahoma,sans-serif;
+}
+
+body{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  background:url('m1.jpg') no-repeat center/cover;
+}
+
+body::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.35);
+}
+
+.wrapper{
+  position:relative;
+  z-index:1;
+  width:min(420px,92vw);
+  background:rgba(2,3,7,.35);
+  color:var(--bg-color);
+  border-radius:16px;
+  padding:32px 28px;
+  box-shadow:0 8px 32px rgba(0,0,0,.35);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+}
+
+.wrapper h1{
+  font-size:40px;
+  text-align:center;
+}
+
+.wrapper .input-box{
+  width:100%;
+  height:52px;
+  margin:22px 0;
+  position:relative;
+}
+
+.input-box input{
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255,.06);
+  border:2px solid rgba(255,255,255,.35);
+  border-radius:40px;
+  outline:none;
+  padding:0 48px 0 18px;
+  color:var(--bg-color);
+  font-size:15px;
+  transition:border-color .2s, box-shadow .2s, background-color .2s;
+}
+
+.input-box input::placeholder{
+  color:rgba(255,255,255,.75);
+}
+
+.input-box i{
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:20px;
+  color:var(--bg-color);
+  pointer-events:none;
+}
+
+.input-box input:focus-visible{
+  border-color:var(--bg-color);
+  box-shadow:0 0 0 4px rgba(255,255,255,.15);
+}
+
+.wrapper .remember-forget{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  font-size:14.5px;
+  margin:-6px 0 16px;
+  color:rgba(255,255,255,.9);
+}
+
+.remember-forget label input{
+  accent-color:var(--bg-color);
+}
+
+.remember-forget a,
+.register-link p a,
+.forgetpass{
+  color:var(--bg-color);
+  text-decoration:none;
+  justify-content: space-between;
+}
+
+.remember-forget a:hover,
+.register-link p a:hover,
+.forgetpass:hover{
+  text-decoration:underline;
+}
+
+.wrapper .btn{
+  width:100%;
+  height:46px;
+  border:none;
+  outline:none;
+  cursor:pointer;
+  border-radius:40px;
+  background:var(--bg-color);
+  color:var(--main-color);
+  font-size:15px;
+  font-weight:700;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+  transition:transform .1s, box-shadow .2s, opacity .2s;
+}
+
+.wrapper .btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 12px 28px rgba(0,0,0,.28);
+}
+
+.wrapper .btn:active{
+  transform:translateY(0);
+}
+
+.wrapper .btn:focus-visible{
+  box-shadow:0 0 0 4px rgba(255,255,255,.2);
+}
+
+.wrapper .register-link{
+  font-size:15px;
+  text-align:center;
+  margin:18px 0 4px;
+  color:rgba(255,255,255,.9);
+}
+
+.forgetpass{
+  margin-left:auto;
+  display:inline-block;
+  margin-left:70px;
+}
+
+@media (max-width:380px){
+  .wrapper h1{font-size:32px;}
+  .wrapper{padding:24px 20px;}
+}
